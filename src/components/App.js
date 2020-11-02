@@ -3,10 +3,10 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Tabs from './Tabs';
-import PageDay from '../pages/day';
-import PageWeek from '../pages/week';
-import PageMonth from '../pages/month';
-import PageYear from '../pages/year';
+import PageDay from '../pages/Day';
+import PageWeek from '../pages/Week';
+import PageMonth from '../pages/Month';
+import PageYear from '../pages/Year';
 
 function App() {
 
