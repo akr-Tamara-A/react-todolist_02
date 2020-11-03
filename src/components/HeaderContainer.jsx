@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Button from './Button';
 import { IconPrev, IconNext } from './Icons';
-import { colorButtonNotActive, colorButtonHover } from '../styles/consts';
+import { IconStyle } from '../styles/styles';
 
 function HeaderContainer(props) {
 
@@ -30,19 +30,11 @@ const Header = styled.header`
 `;
 
 const StyledIconPrev = styled(IconPrev)`
-  fill: ${colorButtonNotActive};
-  
-  :hover {
-    fill:${colorButtonHover};
-  }
-
-  :focus {
-    fill:${colorButtonHover};
-  }
+  ${IconStyle}
 `;
 
 const StyledIconNext = styled(IconNext)`
-  fill: ${colorButtonNotActive}
+  ${IconStyle}
 `;
 
 const Date = styled.div`
