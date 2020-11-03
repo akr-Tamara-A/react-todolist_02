@@ -29,7 +29,7 @@ export const IconNext = ({ className }) => (
 );
 
 export const IconHome = ({ className }) => (
-  <Svg viewBox="0 0 40 40" className={className}>
+  <Svg viewBox="10 10 20 20" className={className}>
     <path
       d="m26 26.4h-12c-0.8 0-1.5-0.7-1.5-1.5v-5c0-0.3-0.2-0.5-0.5-0.5h-1c-0.2 0-0.4-0.1-0.5-0.3s0-0.4 0.2-0.6l8.4-6.5c0.5-0.4 1.3-0.4 
         1.8 0l8.4 6.5c0.2 0.1 0.2 0.4 0.2 0.6-0.1 0.2-0.3 0.3-0.5 0.3h-1c-0.3 0-0.5 0.2-0.5 0.5v5c0 0.8-0.7 1.5-1.5 1.5zm-13.6-8c0.6 0.2 
@@ -44,7 +44,7 @@ export const IconHome = ({ className }) => (
 );
 
 export const IconSettings = ({ className }) => (
-  <Svg viewBox="0 0 40 40" className={className}>
+  <Svg viewBox="10 10 20 20" className={className}>
     <path
       d="M20,22.5c-1.4,0-2.5-1.1-2.5-2.5s1.1-2.5,2.5-2.5s2.5,1.1,2.5,2.5S21.4,22.5,20,22.5z M20,18.5
         c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S20.8,18.5,20,18.5z"

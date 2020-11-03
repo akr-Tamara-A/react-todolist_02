@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
+import { IconHome, IconSettings } from './Icons';
+import { IconStyle } from '../styles/styles';
+
 import {
   colorLinkHover,
   colorButtonNotActive,
@@ -34,9 +37,9 @@ function Tabs() {
             linkOptions: false,
           });
         }}
-      >
-        Home
-      </StyledRouterLink>
+        >
+          <StyledIconHome />
+        </StyledRouterLink>
       <div>
         <StyledRouterLink
           to="/day"
@@ -117,7 +120,7 @@ function Tabs() {
           });
         }}
       >
-        Options
+        <StyledIconSettings />
       </StyledRouterLink>
     </TabsWrapper>
   );
@@ -148,4 +151,23 @@ const StyledRouterLink = styled(Link)`
     color: ${(props) => (props.isActive ? colorButtonActive : colorLinkHover)};
     cursor: ${(props) => (props.isActive ? "default" : "pointer")};
   }
+
+  :focus {
+    outline: none;
+    color: ${colorLinkHover};
+  }
 `;
+
+
+const StyledIconHome = styled(IconHome)`
+  ${IconStyle};
+  width: 1.1875rem;
+  height: 1.1875rem;
+`;
+
+const StyledIconSettings = styled(IconSettings)`
+  ${IconStyle};
+  width: 1.1875rem;
+  height: 1.1875rem;
+`;
+
