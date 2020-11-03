@@ -11,69 +11,113 @@ import {
 
 function Tabs() {
   const [isLinkActive, setisLinkActive] = useState({
-    linkDay: true,
+    linkHome: true,
+    linkDay: false,
     linkWeek: false,
     linkMonth: false,
     linkYear: false,
+    linkOptions: false,
   });
 
   return (
     <TabsWrapper>
       <StyledRouterLink
-        to="/day"
-        isActive={isLinkActive.linkDay}
+        to="/"
+        isActive={isLinkActive.linkHome}
         onClick={() => {
           setisLinkActive({
-            linkDay: true,
-            linkWeek: false,
-            linkMonth: false,
-            linkYear: false,
-          });
-        }}
-      >
-        Day
-      </StyledRouterLink>
-      <StyledRouterLink
-        to="/week"
-        isActive={isLinkActive.linkWeek}
-        onClick={() => {
-          setisLinkActive({
-            linkDay: false,
-            linkWeek: true,
-            linkMonth: false,
-            linkYear: false,
-          });
-        }}
-      >
-        Week
-      </StyledRouterLink>
-      <StyledRouterLink
-        to="/month"
-        isActive={isLinkActive.linkMonth}
-        onClick={() => {
-          setisLinkActive({
-            linkDay: false,
-            linkWeek: false,
-            linkMonth: true,
-            linkYear: false,
-          });
-        }}
-      >
-        Month
-      </StyledRouterLink>
-      <StyledRouterLink
-        to="/year"
-        isActive={isLinkActive.linkYear}
-        onClick={() => {
-          setisLinkActive({
+            linkHome: true,
             linkDay: false,
             linkWeek: false,
             linkMonth: false,
-            linkYear: true,
+            linkYear: false,
+            linkOptions: false,
           });
         }}
       >
-        Year
+        Home
+      </StyledRouterLink>
+      <div>
+        <StyledRouterLink
+          to="/day"
+          isActive={isLinkActive.linkDay}
+          onClick={() => {
+            setisLinkActive({
+              linkHome: false,
+              linkDay: true,
+              linkWeek: false,
+              linkMonth: false,
+              linkYear: false,
+              linkOptions: false,
+            });
+          }}
+        >
+          Day
+        </StyledRouterLink>
+        <StyledRouterLink
+          to="/week"
+          isActive={isLinkActive.linkWeek}
+          onClick={() => {
+            setisLinkActive({
+              linkHome: false,
+              linkDay: false,
+              linkWeek: true,
+              linkMonth: false,
+              linkYear: false,
+              linkOptions: false,
+            });
+          }}
+        >
+          Week
+        </StyledRouterLink>
+        <StyledRouterLink
+          to="/month"
+          isActive={isLinkActive.linkMonth}
+          onClick={() => {
+            setisLinkActive({
+              linkHome: false,
+              linkDay: false,
+              linkWeek: false,
+              linkMonth: true,
+              linkYear: false,
+              linkOptions: false,
+            });
+          }}
+        >
+          Month
+        </StyledRouterLink>
+        <StyledRouterLink
+          to="/year"
+          isActive={isLinkActive.linkYear}
+          onClick={() => {
+            setisLinkActive({
+              linkHome: false,
+              linkDay: false,
+              linkWeek: false,
+              linkMonth: false,
+              linkYear: true,
+              linkOptions: false,
+            });
+          }}
+        >
+          Year
+        </StyledRouterLink>
+      </div>
+      <StyledRouterLink
+        to="/options"
+        isActive={isLinkActive.linkOptions}
+        onClick={() => {
+          setisLinkActive({
+            linkHome: false,
+            linkDay: false,
+            linkWeek: false,
+            linkMonth: false,
+            linkYear: false,
+            linkOptions: true,
+          });
+        }}
+      >
+        Options
       </StyledRouterLink>
     </TabsWrapper>
   );
@@ -83,7 +127,7 @@ export default Tabs;
 
 const TabsWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #31363c;
   width: 100%;
@@ -98,15 +142,10 @@ const StyledRouterLink = styled(Link)`
     props.isActive ? `2px solid ${colorLinkHover}` : "2px solid transparent"};
   text-decoration: none;
   color: ${(props) =>
-    props.isActive ? colorButtonActive : colorButtonNotActive
-  };
+    props.isActive ? colorButtonActive : colorButtonNotActive};
 
   :hover {
-    color: ${(props) =>
-      props.isActive ? colorButtonActive : colorLinkHover
-    };
-    cursor: ${(props) =>
-      props.isActive ? 'default' : 'pointer'
-    };
+    color: ${(props) => (props.isActive ? colorButtonActive : colorLinkHover)};
+    cursor: ${(props) => (props.isActive ? "default" : "pointer")};
   }
 `;

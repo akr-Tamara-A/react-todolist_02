@@ -7,6 +7,8 @@ import PageDay from '../pages/Day';
 import PageWeek from '../pages/Week';
 import PageMonth from '../pages/Month';
 import PageYear from '../pages/Year';
+import PageOptions from '../pages/Options';
+import PageHome from '../pages/Home';
 
 function App() {
 
@@ -17,10 +19,12 @@ function App() {
           <BrowserRouter>
           <Tabs />
             <Switch>
+              <Route exact path='/' component={PageHome} />
               <Route path='/day' component={PageDay} />
               <Route path='/week' component={PageWeek} />
               <Route path='/month' component={PageMonth} />
               <Route path='/year' component={PageYear} />
+              <Route path='/options' component={PageOptions} />
             </Switch>
           </BrowserRouter>
         </PageWrapper>
